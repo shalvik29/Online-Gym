@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/CSS" href="../style.css">
+</head>
+<body>
+    
+    <script src="admin.js"></script>
+    <div class="image">
+        <img src="../admin_gym.jfif" height="50" width="70" alt="Gym image">
+    </div>
+    <div class="connections">
+        <h2>Prestigious Gym</h2>    
+    </div>
+    <div class="header">
+        <a href="/fitness">Fitness Classes</a>
+    </div>
+    <div class="content">
+        <% results.forEach(function(data) { %>
+        <h4>Name: <%= data.name %></h4>
+        <h4>Contact Number: <%= data.phone_number %></h4>
+        <h4>Email: <%= data.emailId %></h4>
+        <% }) %>
+    </div>
+    <div class="footer">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</body>
+</html>

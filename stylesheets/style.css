@@ -1,0 +1,113 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+.image {
+    float: left;
+    background-color: #333;
+    padding-top:8px;
+    padding-left:8px;
+    padding-bottom: 6px;
+    overflow: hidden;  
+  }
+  
+.connections {
+    float: left;
+    background-color: #333333;
+    width: 80%;
+    color: #f2f2f2;
+    text-align: center;
+}
+.heading {
+  float: left;
+  background-color: #333333;
+  width: 45%;
+  color: #f2f2f2;
+  text-align: right;
+}
+  /* Style the top navigation bar */
+  .header {
+    overflow: hidden;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 12px;
+    background-color: #333;
+  }
+  
+/* Style the header links */
+.header a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Style the content */
+  .content {
+    background-color: #ddd;
+    text-align: left;
+    display: block;
+    padding-top: 175px;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 125px;
+    height: 500px; /* Should be removed. Only for demonstration */
+  }
+  .fitness {
+    background-color: #ddd;
+    text-align: left;
+    display: block;
+    padding-top: 10px;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 10px;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  .footer {
+    background-color: #333;
+  }
+  
+  .footer a {
+    float: left;
+    display: block;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer img {
+    float: right;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  .form-container {
+    max-width: 300px;
+    height: 250px;
+    padding: 10px;
+    background-color: white;
+  }
+  .form-container input[type=text], .form-container input[type=number] .form-container input[type=datetime] {
+
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }

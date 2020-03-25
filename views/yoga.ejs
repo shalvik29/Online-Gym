@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/CSS" href="../style.css">
+</head>
+<body>
+    
+    <script>
+      
+    function onDelete(yogaId) {
+        if (confirm("Are you sure you want to delete?")) {
+            const Http = new XMLHttpRequest();
+            const url='http://localhost:3000/yoga/'+yogaId ;
+            console.log(url);
+            Http.open("DELETE", url);
+            Http.send();
+            window.location.href = "/yoga"
+        }
+    }
+    function onEdit(yogaId) {
+        window.location.href = '/yoga/' + yogaId
+    }
+
+    // function onUpdate(yogaId) {
+    //     const Http = new XMLHttpRequest();
+    //     const url='http://localhost:3000/yoga/'+yogaId ;
+    //     console.log(url);
+    //     Http.open("PUT", url);
+    //     Http.send();
+    // }
+    function openForm(yogaId) {  
+        window.location.href = "/yogaUpd/"+yogaId;
+        const Http = new XMLHttpRequest();
+        console.log(yogaId);
+        const url='http://localhost:3000/yogaUpd/'+yogaId ;
+        Http.open("GET", url);
+        Http.send();
+    }
+
+    </script>
+    <div class="image">
+        <img src="../admin_gym.jfif" height="50" width="70" alt="Gym image">
+    </div>
+    <div class="connections">
+        <h2>Prestigious Gym</h2>    
+    </div>
+    <div class="header">
+        <a href="/fitness">Fitness Classes</a>
+    </div>
+    <div class="content">
+        <table style="width:100%">
+            <tr>
+              <th>Instructor</th>
+              <th>Room Number</th>
+              <th>Capacity</th>
+              <th>Start time</th>
+              <th>End time</th>
+            </tr>
+            <% results.forEach(function(data) { %>
+            <tr>
+              <td><%= data.instructor %></td>
+              <td><%= data.room_number %></td>
+              <td><%= data.capacity %></td>
+              <td><%= data.start_time %></td>
+              <td><%= data.end_time %></td>
+              <td><button type="submit" onclick="openForm('<%= data.yogaId %>')"> Update</button></td>
+            <td><button type="submit" onclick="onDelete('<%= data.yogaId %>')"> Delete</button></td>
+            </tr>
+            <% }) %>
+        </table>
+        <form action="/yoga" method="POST">
+            <br><br>
+            <label for="instructor"><b>Instructor</b></label>
+            <input type="text" placeholder="Enter instructor" name="instructor" required>
+            <br>
+            <label for="room_number"><b>Room Number</b></label>
+            <input type="number" placeholder="Enter room number" name="room_number" required>
+            <br>
+            <label for="capacity"><b>Capacity</b></label>
+            <input type="number" placeholder="Enter capacity" name="capacity" required>
+            <br>
+            <label for="start_time"><b>Start time</b></label>
+            <input type="datetime" placeholder="Enter start time" name="start_time" required>
+            <br>
+            <label for="end_time"><b>End time</b></label>
+            <input type="datetime" placeholder="Enter end time" name="end_time" required>
+            <br>
+            <button type="submit" >Insert</button>
+          </form>
+          
+    </div>
+    <div class="footer">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</body>
+</html>
