@@ -21,4 +21,4 @@ db.query('CREATE TABLE IF NOT EXISTS cardio (`cardioId` int(10) NOT NULL primary
 db.query('CREATE TABLE IF NOT EXISTS strength (`strengthId` int(10) NOT NULL primary key AUTO_INCREMENT,`fitnessId` int(10) NOT null,`instructor` varchar(100) NOT NULL,`room_number` int(7) NOT NULL,`capacity` int(7) NOT NULL,`start_time` datetime NOT NULL,`end_time` datetime NOT NULL)');
 
 app.use('/',gymRouter);
-app.listen(3000);
+app.listen(8080);
