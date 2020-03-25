@@ -12,7 +12,7 @@
     function onDelete(yogaId) {
         if (confirm("Are you sure you want to delete?")) {
             const Http = new XMLHttpRequest();
-            const url='http://localhost:3000/yoga/'+yogaId ;
+            const url='http://206.81.14.184/yoga/'+yogaId ;
             console.log(url);
             Http.open("DELETE", url);
             Http.send();
@@ -34,7 +34,7 @@
         window.location.href = "/yogaUpd/"+yogaId;
         const Http = new XMLHttpRequest();
         console.log(yogaId);
-        const url='http://localhost:3000/yogaUpd/'+yogaId ;
+        const url='http://206.81.14.184/yogaUpd/'+yogaId ;
         Http.open("GET", url);
         Http.send();
     }
