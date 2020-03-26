@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zumba</title>
+    <link rel="stylesheet" type="text/CSS" href="../style.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+  
+    <script>
+        async function onUpdate(zumbaId) {
+            await axios.patch('http://206.81.14.184/zumba/'+zumbaId, {
+              room_number: document.getElementById('room_number').value,
+              instructor: document.getElementById('instructor').value,
+              capacity: document.getElementById('capacity').value,
+              start_time: document.getElementById('start_time').value,
+              end_time: document.getElementById('end_time').value
+          });
+          window.location.href = "/zumba/";
+           
+        }
+    </script>
+    <div class="image">
+        <img src="../admin_gym.jfif" height="50" width="70" alt="Gym image">
+    </div>
+    <div class="connections">
+        <h2>Prestigious Gym</h2>    
+    </div>
+    <div class="header">
+        <a href="/fitness">Fitness Classes</a>
+    </div>
+    <div class="content">
+        <% results.forEach(function(data) { %>
+          <form action="/zumba/<%= data.zumbaId %>">
+            <label for="instructor"><b>Instructor</b></label>
+            <input id="instructor" type="text" value="<%= data.instructor %>" name="instructor" required>
+            <br>
+            <label for="room_number"><b>Room Number</b></label>
+            <input id="room_number" type="number" value="<%= data.room_number %>" name="room_number" required>
+            <br>
+            <label for="capacity"><b>Capacity</b></label>
+            <input id="capacity" type="number" value="<%= data.capacity %>" name="capacity" required>
+            <br>
+            <label for="start_time"><b>Start time</b></label>
+            <input id="start_time" type="datetime" value="<%= data.start_time %>" name="start_time" required>
+            <br>
+            <label for="end_time"><b>End time</b></label>
+            <input id="end_time" type="datetime" value="<%= data.end_time %>" name="end_time" required>
+            <br>
+            <button type="button" onclick="onUpdate('<%= data.zumbaId %>')">Update</button>
+          </form>
+        <% }) %>
+    </div>
+    <div class="footer">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</body>
+</html>

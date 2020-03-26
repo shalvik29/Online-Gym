@@ -2,39 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Strength</title>
     <link rel="stylesheet" type="text/CSS" href="../style.css">
 </head>
 <body>
     
     <script>
       
-    function onDelete(yogaId) {
+    function onDelete(strengthId) {
         if (confirm("Are you sure you want to delete?")) {
             const Http = new XMLHttpRequest();
-            const url='http://206.81.14.184/yoga/'+yogaId ;
+            const url='http://206.81.14.184/strength/'+strengthId ;
             console.log(url);
             Http.open("DELETE", url);
             Http.send();
-            window.location.href = "/yoga"
+            window.location.href = "/strength"
         }
     }
-    // function onEdit(yogaId) {
-    //     window.location.href = '/yoga/' + yogaId
-    // }
-
-    // function onUpdate(yogaId) {
-    //     const Http = new XMLHttpRequest();
-    //     const url='http://localhost:3000/yoga/'+yogaId ;
-    //     console.log(url);
-    //     Http.open("PUT", url);
-    //     Http.send();
-    // }
-    function openForm(yogaId) {  
-        window.location.href = "/yogaUpd/"+yogaId;
+    function openForm(strengthId) {  
+        window.location.href = "/strengthUpd/"+strengthId;
         const Http = new XMLHttpRequest();
-        console.log(yogaId);
-        const url='http://206.81.14.184/yogaUpd/'+yogaId ;
+        console.log(strengthId);
+        const url='http://206.81.14.184/strengthUpd/'+strengthId ;
         Http.open("GET", url);
         Http.send();
     }
@@ -65,12 +54,12 @@
               <td><%= data.capacity %></td>
               <td><%= data.start_time %></td>
               <td><%= data.end_time %></td>
-              <td><button type="submit" onclick="openForm('<%= data.yogaId %>')"> Update</button></td>
-            <td><button type="submit" onclick="onDelete('<%= data.yogaId %>')"> Delete</button></td>
+              <td><button type="submit" onclick="openForm('<%= data.strengthId %>')"> Update</button></td>
+            <td><button type="submit" onclick="onDelete('<%= data.strengthId %>')"> Delete</button></td>
             </tr>
             <% }) %>
         </table>
-        <form action="/yoga" method="POST">
+        <form action="/strength" method="POST">
             <br><br>
             <label for="instructor"><b>Instructor</b></label>
             <input type="text" placeholder="Enter instructor" name="instructor" required>

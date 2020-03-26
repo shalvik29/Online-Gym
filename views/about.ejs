@@ -17,9 +17,12 @@
     <div class="header">
         <a href="/fitness">Fitness Classes</a>
     </div>
-    <div class="contents">
-        <img src="../dashboard_gym.jfif" alt="dashboard" width="400" height="250">
-        <img src="../q1.jfif" alt="quote" width="400" height="250">
+    <div class="content">
+        <% results.forEach(function(data) { %>
+        <h4>Gym Address: <%= data.address %></h4>
+        <h4>Phone number: <%= data.phone_number %></h4>
+        <h4>Details: <%= data.details %></h4>
+        <% }) %>
     </div>
     <div class="footer">
         <a href="/about">About</a>
