@@ -18,7 +18,7 @@ const options ={
       "url": "https://github.com/Kaitoke-kid",
       "email": "sshah96@uncc.edu"
     },
-    "servers" : ["http://206.81.14.184:8080/"]
+    "servers" : ["http://206.81.14.184:3000/"]
   }
 },
     apis: ["swagger.js"]

@@ -10,6 +10,8 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
     "sync-mysql": "^3.0.1"
   },
   "devDependencies": {},
